@@ -1,0 +1,92 @@
+<div class="my-calendar" [style.background-color]=backgroundColor  (mouseenter)="setFocus(true)" (mouseleave)="setFocus(false)" (keydown)="closeEsc($event.keyCode)">
+    <div>
+        <table>
+            <tr>
+                <td  [style.color]=textColorMain>
+                     {{title}}   
+                </td>
+                <td>
+                    <input (focusin)="showCalendar()" [value]=datum id="datum">
+
+                </td>
+                <!--td>
+                    <Button [hidden]=calendarHidden (click)="hideCalendar()">X</Button>
+                </td-->
+            </tr>
+        </table>
+    </div>
+    <div *ngIf="calendarHidden" [@fadeIn]="fadeOn" >
+    <table > <!--[@fade]="fadeOn ? 'active' : 'void'"--> 
+        <tr>
+            <td colspan="5" [style.color]=textColorMain><div>{{curr_month}} {{Year}}</div></td>
+            <td><button [hidden]=controlsHidden (click)="prevMonth()" [style.color]=backgroundColor [style.background-color]=textColorMain><</button></td>
+            <td><button [hidden]=controlsHidden (click)="nextMonth()" [style.color]=backgroundColor [style.background-color]=textColorMain>></button></td>
+        </tr>
+        <tr>
+            
+            <td [style.color]=textColorMain>Pon</td>
+            <td [style.color]=textColorMain>Uto</td>
+            <td [style.color]=textColorMain>Sre</td>
+            <td [style.color]=textColorMain>Čet</td>
+            <td [style.color]=textColorMain>Pet</td>
+            <td [style.color]=textColorMain>Sub</td>
+            <td [style.color]=textColorMain>Ned</td>
+        </tr>
+        <tr>
+            <td [style.Color]=color[0] [style.Border]=border[0] (click)="setDate(0)" (mouseenter)="setHoverColor(0)" (mouseleave)="desetHoverColor(0)" [style.BackgroundColor]=hover[0] class="circle">{{days[0]}}</td>
+            <td [style.Color]=color[1] [style.Border]=border[1] (click)="setDate(1)" (mouseenter)="setHoverColor(1)" (mouseleave)="desetHoverColor(1)" [style.BackgroundColor]=hover[1] class="circle">{{days[1]}}</td>
+            <td [style.Color]=color[2] [style.Border]=border[2] (click)="setDate(2)" (mouseenter)="setHoverColor(2)" (mouseleave)="desetHoverColor(2)" [style.BackgroundColor]=hover[2] class="circle">{{days[2]}}</td>
+            <td [style.Color]=color[3] [style.Border]=border[3] (click)="setDate(3)" (mouseenter)="setHoverColor(3)" (mouseleave)="desetHoverColor(3)" [style.BackgroundColor]=hover[3] class="circle">{{days[3]}}</td>
+            <td [style.Color]=color[4] [style.Border]=border[4] (click)="setDate(4)" (mouseenter)="setHoverColor(4)" (mouseleave)="desetHoverColor(4)" [style.BackgroundColor]=hover[4] class="circle">{{days[4]}}</td>
+            <td [style.Color]=color[5] [style.Border]=border[5] (click)="setDate(5)" (mouseenter)="setHoverColor(5)" (mouseleave)="desetHoverColor(5)" [style.BackgroundColor]=hover[5] class="circle">{{days[5]}}</td>
+            <td [style.Color]=color[6] [style.Border]=border[6] (click)="setDate(6)" (mouseenter)="setHoverColor(6)" (mouseleave)="desetHoverColor(6)" [style.BackgroundColor]=hover[6] class="circle">{{days[6]}}</td>
+        </tr>
+        
+        <tr>
+            <td [style.Color]=color[7] [style.Border]=border[7] (click)="setDate(7)" (mouseenter)="setHoverColor(7)" (mouseleave)="desetHoverColor(7)" [style.BackgroundColor]=hover[7] class="circle">{{days[7]}}</td>
+            <td [style.Color]=color[8] [style.Border]=border[8] (click)="setDate(8)" (mouseenter)="setHoverColor(8)" (mouseleave)="desetHoverColor(8)" [style.BackgroundColor]=hover[8] class="circle">{{days[8]}}</td>
+            <td [style.Color]=color[9] [style.Border]=border[9] (click)="setDate(9)" (mouseenter)="setHoverColor(9)" (mouseleave)="desetHoverColor(9)" [style.BackgroundColor]=hover[9] class="circle">{{days[9]}}</td>
+            <td [style.Color]=color[10] [style.Border]=border[10] (click)="setDate(10)" (mouseenter)="setHoverColor(10)" (mouseleave)="desetHoverColor(10)" [style.BackgroundColor]=hover[10] class="circle">{{days[10]}}</td>
+            <td [style.Color]=color[11] [style.Border]=border[11] (click)="setDate(11)" (mouseenter)="setHoverColor(11)" (mouseleave)="desetHoverColor(11)" [style.BackgroundColor]=hover[11] class="circle">{{days[11]}}</td>
+            <td [style.Color]=color[12] [style.Border]=border[12] (click)="setDate(12)" (mouseenter)="setHoverColor(12)" (mouseleave)="desetHoverColor(12)" [style.BackgroundColor]=hover[12] class="circle">{{days[12]}}</td>
+            <td [style.Color]=color[13] [style.Border]=border[13] (click)="setDate(13)" (mouseenter)="setHoverColor(13)" (mouseleave)="desetHoverColor(13)" [style.BackgroundColor]=hover[13] class="circle">{{days[13]}}</td>
+        </tr>
+        <tr>
+            <td [style.Color]=color[14] [style.Border]=border[14] (click)="setDate(14)" (mouseenter)="setHoverColor(14)" (mouseleave)="desetHoverColor(14)" [style.BackgroundColor]=hover[14] class="circle">{{days[14]}}</td>
+            <td [style.Color]=color[15] [style.Border]=border[15] (click)="setDate(15)" (mouseenter)="setHoverColor(15)" (mouseleave)="desetHoverColor(15)" [style.BackgroundColor]=hover[15] class="circle">{{days[15]}}</td>
+            <td [style.Color]=color[16] [style.Border]=border[16] (click)="setDate(16)" (mouseenter)="setHoverColor(16)" (mouseleave)="desetHoverColor(16)" [style.BackgroundColor]=hover[16] class="circle">{{days[16]}}</td>
+            <td [style.Color]=color[17] [style.Border]=border[17] (click)="setDate(17)" (mouseenter)="setHoverColor(17)" (mouseleave)="desetHoverColor(17)" [style.BackgroundColor]=hover[17] class="circle">{{days[17]}}</td>
+            <td [style.Color]=color[18] [style.Border]=border[18] (click)="setDate(18)" (mouseenter)="setHoverColor(18)" (mouseleave)="desetHoverColor(18)" [style.BackgroundColor]=hover[18] class="circle">{{days[18]}}</td>
+            <td [style.Color]=color[19] [style.Border]=border[19] (click)="setDate(19)" (mouseenter)="setHoverColor(19)" (mouseleave)="desetHoverColor(19)" [style.BackgroundColor]=hover[19] class="circle">{{days[19]}}</td>
+            <td [style.Color]=color[20] [style.Border]=border[20] (click)="setDate(20)" (mouseenter)="setHoverColor(20)" (mouseleave)="desetHoverColor(20)" [style.BackgroundColor]=hover[20] class="circle">{{days[20]}}</td>
+        </tr>
+        <tr>
+            <td [style.Color]=color[21] [style.Border]=border[21] (click)="setDate(21)" (mouseenter)="setHoverColor(21)" (mouseleave)="desetHoverColor(21)" [style.BackgroundColor]=hover[21] class="circle">{{days[21]}}</td>
+            <td [style.Color]=color[22] [style.Border]=border[22] (click)="setDate(22)" (mouseenter)="setHoverColor(22)" (mouseleave)="desetHoverColor(22)" [style.BackgroundColor]=hover[22] class="circle">{{days[22]}}</td>
+            <td [style.Color]=color[23] [style.Border]=border[23] (click)="setDate(23)" (mouseenter)="setHoverColor(23)" (mouseleave)="desetHoverColor(23)" [style.BackgroundColor]=hover[23] class="circle">{{days[23]}}</td>
+            <td [style.Color]=color[24] [style.Border]=border[24] (click)="setDate(24)" (mouseenter)="setHoverColor(24)" (mouseleave)="desetHoverColor(24)" [style.BackgroundColor]=hover[24] class="circle">{{days[24]}}</td>
+            <td [style.Color]=color[25] [style.Border]=border[25] (click)="setDate(25)" (mouseenter)="setHoverColor(25)" (mouseleave)="desetHoverColor(25)" [style.BackgroundColor]=hover[25] class="circle">{{days[25]}}</td>
+            <td [style.Color]=color[26] [style.Border]=border[26] (click)="setDate(26)" (mouseenter)="setHoverColor(26)" (mouseleave)="desetHoverColor(26)" [style.BackgroundColor]=hover[26] class="circle">{{days[26]}}</td>
+            <td [style.Color]=color[27] [style.Border]=border[27] (click)="setDate(27)" (mouseenter)="setHoverColor(27)" (mouseleave)="desetHoverColor(27)" [style.BackgroundColor]=hover[27] class="circle">{{days[27]}}</td>
+        </tr>
+        <tr>
+            <td [style.Color]=color[28] [style.Border]=border[28] (click)="setDate(28)" (mouseenter)="setHoverColor(28)" (mouseleave)="desetHoverColor(28)" [style.BackgroundColor]=hover[28] class="circle">{{days[28]}}</td>
+            <td [style.Color]=color[29] [style.Border]=border[29] (click)="setDate(29)" (mouseenter)="setHoverColor(29)" (mouseleave)="desetHoverColor(29)" [style.BackgroundColor]=hover[29] class="circle">{{days[29]}}</td>
+            <td [style.Color]=color[30] [style.Border]=border[30] (click)="setDate(30)" (mouseenter)="setHoverColor(30)" (mouseleave)="desetHoverColor(30)" [style.BackgroundColor]=hover[30] class="circle">{{days[30]}}</td>
+            <td [style.Color]=color[31] [style.Border]=border[31] (click)="setDate(31)" (mouseenter)="setHoverColor(31)" (mouseleave)="desetHoverColor(31)" [style.BackgroundColor]=hover[31] class="circle">{{days[31]}}</td>
+            <td [style.Color]=color[32] [style.Border]=border[32] (click)="setDate(32)" (mouseenter)="setHoverColor(32)" (mouseleave)="desetHoverColor(32)" [style.BackgroundColor]=hover[32] class="circle">{{days[32]}}</td>
+            <td [style.Color]=color[33] [style.Border]=border[33] (click)="setDate(33)" (mouseenter)="setHoverColor(33)" (mouseleave)="desetHoverColor(33)" [style.BackgroundColor]=hover[33] class="circle">{{days[33]}}</td>
+            <td [style.Color]=color[34] [style.Border]=border[34] (click)="setDate(34)" (mouseenter)="setHoverColor(34)" (mouseleave)="desetHoverColor(34)" [style.BackgroundColor]=hover[34] class="circle">{{days[34]}}</td>
+        </tr>
+        <tr>
+            <td [style.Color]=color[35] [style.Border]=border[35] (click)="setDate(35)" (mouseenter)="setHoverColor(35)" (mouseleave)="desetHoverColor(35)" [style.BackgroundColor]=hover[35] class="circle">{{days[35]}}</td>
+            <td [style.Color]=color[36] [style.Border]=border[36] (click)="setDate(36)" (mouseenter)="setHoverColor(36)" (mouseleave)="desetHoverColor(36)" [style.BackgroundColor]=hover[36] class="circle">{{days[36]}}</td>
+            <td [style.Color]=color[37] [style.Border]=border[37] (click)="setDate(37)" (mouseenter)="setHoverColor(37)" (mouseleave)="desetHoverColor(37)" [style.BackgroundColor]=hover[37] class="circle">{{days[37]}}</td>
+            <td [style.Color]=color[38] [style.Border]=border[38] (click)="setDate(38)" (mouseenter)="setHoverColor(38)" (mouseleave)="desetHoverColor(38)" [style.BackgroundColor]=hover[38] class="circle">{{days[38]}}</td>
+            <td [style.Color]=color[39] [style.Border]=border[39] (click)="setDate(39)" (mouseenter)="setHoverColor(39)" (mouseleave)="desetHoverColor(39)" [style.BackgroundColor]=hover[39] class="circle">{{days[39]}}</td>
+            <td [style.Color]=color[40] [style.Border]=border[40] (click)="setDate(40)" (mouseenter)="setHoverColor(40)" (mouseleave)="desetHoverColor(40)" [style.BackgroundColor]=hover[40] class="circle">{{days[40]}}</td>
+            <td [style.Color]=color[41] [style.Border]=border[41] (click)="setDate(41)" (mouseenter)="setHoverColor(41)" (mouseleave)="desetHoverColor(41)" [style.BackgroundColor]=hover[41] class="circle">{{days[41]}}</td>
+        </tr>
+    </table>
+    </div>
+</div>

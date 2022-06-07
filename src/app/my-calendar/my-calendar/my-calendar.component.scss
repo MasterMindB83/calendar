@@ -1,0 +1,31 @@
+
+div{
+    margin: 10px;
+    font-size: large;
+    text-align: center;
+}
+.my-calendar{
+    width:270px;
+    height: auto;
+    vertical-align: top;
+    text-align: center;
+    border:2px solid black;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 5px;
+    overflow: hidden;
+    
+}
+
+input{
+    width:100px;
+}
+/*td:hover{
+    background-color: teal;
+}*/
+.circle{
+    /*clip-path: circle();*/
+    border-radius: 50%;
+    padding-top: 6.5px;
+    padding-bottom:6.5px;
+}
+
